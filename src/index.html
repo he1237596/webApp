@@ -1,12 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="AppController">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>Document</title>
+    <title ng-bind="appTitle">首页</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<!--头部-->
 
+<navs></navs>
+
+<!--底部-->
+<tabbar></tabbar>
+<script>
+    //选择375px的ipone6作为草稿
+    //设置html字体
+    var fontSize = window.screen.width/10 + 'px';
+    document.getElementsByTagName('html')[0].style.fontSize = fontSize;
+
+</script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
