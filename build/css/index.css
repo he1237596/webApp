@@ -397,7 +397,9 @@ ul {
   height: 1.70666667rem;
   line-height: 1.70666667rem;
   background-color: lightseagreen;
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
   color: #fff;
 }
 .navs p {
@@ -415,6 +417,7 @@ ul {
   left: 0;
   bottom: 0;
   height: 1.30666667rem;
+  background-color: #fff;
   width: 100%;
   border-top: 1px solid #ccc;
 }
@@ -425,9 +428,69 @@ ul {
   flex: 1;
   text-align: center;
 }
-.tabbar ul li image {
+.tabbar ul li img {
   width: 0.53333333rem;
+}
+.active {
+  color: lightseagreen;
+}
+.home_list {
+  padding-top: 1.70666667rem;
+  padding-bottom: 1.30666667rem;
+}
+.home_list .home_content {
+  padding: 0rem 0.26666667rem;
+  padding-bottom: 0.21333333rem;
+  border-bottom: 1px solid #ccc;
+}
+.home_list .home_content .tag {
+  width: 2.13333333rem;
+  height: 0.53333333rem;
+  background-color: #999;
+  text-align: center;
+  line-height: 0.53333333rem;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 0.26666667rem;
+  color: #fff;
+}
+.home_list .home_content h3 {
+  font-weight: normal;
+  font-size: 0.53333333rem;
+  margin-bottom: 0.26666667rem;
+}
+.home_list .home_content .post1 p {
+  line-height: 0.66666667rem;
+  color: #666;
+}
+.home_list .home_content .post2 p {
+  width: 6.93333333rem;
+  line-height: 0.66666667rem;
+  height: 2rem;
+  overflow: hidden;
+  float: left;
+  color: #666;
+}
+.home_list .home_content .post2 img {
+  float: right;
+  width: 2.13333333rem;
+}
+.home_list .home_content .post3 {
+  width: 100%;
+}
+.home_list .home_content .post3 ul {
+  display: flex;
+  width: 100%;
+}
+.home_list .home_content .post3 ul li {
+  flex: 1;
+}
+.home_list .home_content .post3 ul li img {
+  padding: 0.05333333rem 0.05333333rem;
+  width: 100%;
 }
 body {
   font-size: 0.37333333rem;
+}
+.home_detail {
+  padding-top: 1.70666667rem;
 }
