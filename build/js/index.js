@@ -2,6 +2,30 @@
 var app = angular.module('app',['ui.router']);
 
 
+/**
+ * Created by rxc on 2017/7/25.
+ */
+angular.module('app').service('myHttp',['$http',function ($http) {
+    this.jsonp = function (url,params,success,error) {
+        $http({
+            url:url,
+            method:'jsonp',
+            params:params
+        }).then(function (regs) {
+            if (success) success(regs);
+        }).catch(function (err) {
+            if(error) error(err);
+        });
+    };
+        //get请求
+    this.getData = function () {
+
+        };
+    //post请求
+    this.postData = function () {
+
+    };
+}]);
 angular.module('app').config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
     $stateProvider.state('home',{
         url:'/home',
@@ -76,14 +100,21 @@ angular.module('app').controller('DetailController',['$scope','$stateParams',fun
     $scope.item = $scope.homeData.posts[index];
     console.log($scope.item);
 }])
-angular.module('app').controller('HomeController',['$scope','$http',function ($scope,$http) {
-    $http({
-        url:'http://localhost/api/home.php',
-        method:'jsonp'
-    }).then(function (regs) {
+angular.module('app').controller('HomeController',['$scope','myHttp',function ($scope,myHttp) {
+    // $http({
+    //     url:'http://localhost/api/home.php',
+    //     method:'jsonp'
+    // }).then(function (regs) {
+    //     $scope.homeData = regs.data;
+    // }).catch(function (err) {
+    //     console.log('err')
+    // })
+    var url = 'http://localhost/api/home.php';
+    myHttp.jsonp(url,null,function (regs) {
+        console.log(regs);
         $scope.homeData = regs.data;
-    }).catch(function (err) {
-        console.log('err')
+    },function (err) {
+        console.log(err);
     })
 }]);
 
