@@ -18,3 +18,4 @@
 ###备注
 api里为本地服务器部署文件,豆瓣不接受有特殊符号的回调,所有用本地服务器将数据转发
 
+![image](https://github.com/he1237596/webApp/blob/master/1.gif)
